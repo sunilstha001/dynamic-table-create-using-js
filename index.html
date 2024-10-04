@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border: none;
+      }
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+   <body>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="data-body">
+        
+      </tbody>
+    </table>
+
+    <script>
+
+      let data = [
+        {"id":1,"name":"John Doe","username":"johndoe","email":"johndoe@example.com","address":"123 Main St"},
+        {"id":2,"name":"Jane Doe","username":"janedoe","email":"janedoe@example.com","address":"456 Market St"},
+        {"id":3,"name":"Jim Smith","username":"jimsmith","email":"jimsmith@example.com","address":"789 Oak St"},
+        {"id":4,"name":"Sara Wilson","username":"sarawilson","email":"sarawilson@example.com","address":"111 Maple Ave"},
+        {"id":5,"name":"Bob Johnson","username":"bobjohnson","email":"bobjohnson@example.com","address":"222 Elm St"},
+        {"id":6,"name":"Amy Williams","username":"amywilliams","email":"amywilliams@example.com","address":"333 Pine St"},
+        {"id":7,"name":"Michael Brown","username":"michaelbrown","email":"michaelbrown@example.com","address":"444 Cedar St"},
+        {"id":8,"name":"Emily Davis","username":"emilydavis","email":"emilydavis@example.com","address":"555 Birch St"},
+        {"id":9,"name":"William Martinez","username":"williammartinez","email":"williammartinez@example.com","address":"666 Cedar St"},
+        {"id":10,"name":"Ashley Rodriguez","username":"ashleyrodriguez","email":"ashleyrodriguez@example.com","address":"777 Pine St"}
+      ];
+
+      const tableBody = document.getElementById('data-body');
+
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.id}</td>
+          <td>${item.name}</td>
+          <td>${item.username}</td>
+          <td>${item.email}</td>
+          <td>${item.address}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    </script>
+  </body>
+</html>
